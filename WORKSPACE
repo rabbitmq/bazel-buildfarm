@@ -28,3 +28,13 @@ buildfarm_images()
 load("@rules_pkg//toolchains/rpm:rpmbuild_configure.bzl", "find_system_rpmbuild")
 
 find_system_rpmbuild(name = "rules_pkg_rpmbuild")
+
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+
+# pivotalrabbitmq/rabbitmq-server-buildenv:linux-rbe-experimental
+container_pull(
+    name = "rabbitmq-server-buildenv",
+    digest = "sha256:bb5343a0dfb56b83238882192a942e069d66f0836c51428ede4236d8f77f5468",
+    registry = "index.docker.io",
+    repository = "pivotalrabbitmq/rabbitmq-server-buildenv",
+)
