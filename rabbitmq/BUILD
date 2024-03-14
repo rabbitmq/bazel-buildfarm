@@ -19,6 +19,7 @@ container_push(
     image = ":buildfarm-shard-worker-rabbitmq-server-buildenv",
     registry = "index.docker.io",
     repository = "pivotalrabbitmq/buildfarm-shard-worker-rabbitmq-server-buildenv",
+    tag = "2.8.0",
 )
 
 alias(
